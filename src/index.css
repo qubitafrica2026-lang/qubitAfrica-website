@@ -4,71 +4,84 @@
   --font-poppins: "Poppins", sans-serif;
 }
 
-body #root {
+:root {
   font-family: var(--font-poppins);
-  font-weight: 200; /* very light */
-  height: 100%;
-  overflow: hidden;
+  font-weight: 300; /* Set overall default font weight to thin */
 }
 
+/* Ensure outer window handles scrolling smoothly without internal double scrollbars */
+html, body {
+  font-family: var(--font-poppins);
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  min-h-screen: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
 @layer utilities {
-    .animate-in {
-        animation-fill-mode: both;
-    }
+  .animate-in {
+    animation-fill-mode: both;
+  }
 
-    .slide-in-from-top {
-        animation-name: slideInFromTop;
-    }
-    .slide-in-from-bottom{
-        animation-name: slideInFromBottom;
-    }
+  .slide-in-from-top {
+    animation-name: slideInFromTop;
+  }
 
-    .anim-duration-300 {
-        animation-duration: 300ms; /* renamed to avoid conflict with Tailwind's duration-300 */
-    }
+  .slide-in-from-bottom {
+    animation-name: slideInFromBottom;
+  }
 
-    .anim-duration-200 {
-        animation-duration: 200ms; /* renamed to avoid conflict with Tailwind's duration-300 */
-    }
+  .anim-duration-300 {
+    animation-duration: 300ms;
+  }
 
-    .anim-duration-700 {
-        animation-duration: 700ms; /* renamed to avoid conflict with Tailwind's duration-300 */
-    }
+  .anim-duration-200 {
+    animation-duration: 200ms;
+  }
 
-    .delay-100 {
-        animation-delay: 100ms;
-    }
+  .anim-duration-700 {
+    animation-duration: 700ms;
+  }
 
-    .delay-200 {
-        animation-delay: 200ms;
-    }
+  .delay-100 {
+    animation-delay: 100ms;
+  }
 
-    .delay-300 {
-        animation-delay: 300ms;
-    }
+  .delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .delay-300 {
+    animation-delay: 300ms;
+  }
 }
 
 @keyframes slideInFromBottom {
-    from {
-        opacity: 0;
-        transform: translateY(1rem);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideInFromTop {
-    from {
-        opacity: 0;
-        transform: translateY(-1rem);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-
-

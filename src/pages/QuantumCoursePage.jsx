@@ -7,18 +7,17 @@ export default function QuantumCoursePage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
-    <>
-      {/* ✅ FIXED NAVBAR */}
-      <div className="fixed top-0 left-0 w-full h-16 z-50">
+    <div className="min-h-screen bg-sky-950 text-white font-light flex flex-col overflow-x-hidden">
+      {/* Fixed Navbar */}
+      <header className="fixed top-0 left-0 w-full h-16 z-50">
         <Navbar />
-      </div>
+      </header>
 
-      {/* ✅ PAGE CONTENT (offset below navbar) */}
-      <div className="pt-16 flex h-screen bg-sky-950 text-white">
+      {/* Main Container */}
+      <div className="pt-16 flex flex-1 w-full max-w-7xl mx-auto">
         <Sidebar open={sidebarOpen} setOpen={setSidebarOpen} />
         <CourseContent setSidebarOpen={setSidebarOpen} />
       </div>
-    </>
+    </div>
   );
 }
-
