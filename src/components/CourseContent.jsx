@@ -53,11 +53,11 @@ export default function CourseContent() {
               },
               { 
                 title: "Qubits & Bloch Sphere", 
-                colabUrl: "https://colab.research.google.com/github/your-username/your-repo/blob/main/week1/day2.ipynb" 
+                colabUrl: "https://github.com/qubitafrica2026-lang/QubitAfrica-Summer-School-2027/blob/main/quantum_information.ipynb" 
               },
               { 
                 title: "Quantum Gates", 
-                colabUrl: "https://colab.research.google.com/github/your-username/your-repo/blob/main/week1/day3.ipynb" 
+                colabUrl: "https://github.com/qubitafrica2026-lang/QubitAfrica-Summer-School-2027/blob/main/quantum_information.ipynb" 
               },
               { 
                 title: "Measurement & Entanglement", 

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Courses from "../components/Courses";
 import {
   Sparkles,
   Users,
@@ -9,15 +8,11 @@ import {
   ArrowRight,
   ShieldCheck,
   Cpu,
-  BookOpen,
   HeartHandshake,
-  CheckCircle2,
   ExternalLink,
   ChevronRight,
-  Code
 } from "lucide-react";
 
-// Custom Brand SVG Icons (replaces removed/renamed lucide-react brand exports)
 function LinkedinIcon({ className }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -65,11 +60,7 @@ export default function AboutPage() {
       bio: "PhD Student in Quantum Computing at University of KwaZulu-Natal. Passionate about democratizing quantum hardware access across Africa through open-source education.",
       image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=600",
       category: "founders",
-      socials: {
-        linkedin: "https://linkedin.com",
-        twitter: "https://x.com",
-        github: "https://github.com",
-      },
+      socials: { linkedin: "https://linkedin.com", twitter: "https://x.com", github: "https://github.com" },
     },
     {
       id: 2,
@@ -78,11 +69,7 @@ export default function AboutPage() {
       bio: "Tech Lead & Quantum Software Architect. Driven by building collaborative peer-programming networks for future researchers.",
       image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=600",
       category: "founders",
-      socials: {
-        linkedin: "https://linkedin.com",
-        twitter: "https://x.com",
-        github: "https://github.com",
-      },
+      socials: { linkedin: "https://linkedin.com", twitter: "https://x.com", github: "https://github.com" },
     },
     {
       id: 3,
@@ -91,11 +78,7 @@ export default function AboutPage() {
       bio: "Specializing in Qiskit and quantum error correction algorithms. Has trained over 500+ students across Africa in quantum error correction.",
       image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=600",
       category: "leads",
-      socials: {
-        linkedin: "https://linkedin.com",
-        twitter: "https://x.com",
-        github: "https://github.com",
-      },
+      socials: { linkedin: "https://linkedin.com", twitter: "https://x.com", github: "https://github.com" },
     },
     {
       id: 4,
@@ -104,11 +87,7 @@ export default function AboutPage() {
       bio: "Bridging global academic research centers with pan-African innovation hubs. Dedicated to open-science quantum research.",
       image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600",
       category: "leads",
-      socials: {
-        linkedin: "https://linkedin.com",
-        twitter: "https://x.com",
-        github: "https://github.com",
-      },
+      socials: { linkedin: "https://linkedin.com", twitter: "https://x.com", github: "https://github.com" },
     },
   ];
 
@@ -119,36 +98,9 @@ export default function AboutPage() {
     { value: "20+", label: "Academic & Industry Partners", icon: Building2 },
   ];
 
-  const values = [
-    {
-      icon: Cpu,
-      title: "Hands-On Peer Coding",
-      description:
-        "Learning quantum mechanics through interactive Python notebooks, live circuit building, and collaborative peer debugging.",
-    },
-    {
-      icon: Globe,
-      title: "Pan-African Accessibility",
-      description:
-        "Breaking down geographical and economic barriers to ensure top-tier quantum education is accessible everywhere.",
-    },
-    {
-      icon: ShieldCheck,
-      title: "Open-Science & Research",
-      description:
-        "Encouraging open-source algorithms, peer-reviewed publications, and community-driven quantum innovations.",
-    },
-    {
-      icon: HeartHandshake,
-      title: "Inclusive Community",
-      description:
-        "Fostering a supportive ecosystem where high schoolers, university researchers, and industry pros learn side-by-side.",
-    },
-  ];
-
   const sponsors = [
     { name: "IBM Quantum Network", category: "Tier 1 Partner", logo: "⚛️ CQCtech" },
-    { name: "Qiskit Community", category: "Ecosystem Partner", logo: "🚀 Academic City University" },
+    { name: "Qiskit Community", category: "Ecosystem Partner", logo: "🚀 Academic City" },
     { name: "PennyLane AI", category: "Quantum Machine Learning", logo: "🌌 UKZN" },
     { name: "African Physics Society", category: "Academic Alliance", logo: "🔬 Google" },
     { name: "Global Quantum Hub", category: "Research Grant Sponsor", logo: "🌐 GQ Hub" },
@@ -156,13 +108,10 @@ export default function AboutPage() {
   ];
 
   const filteredTeam =
-    activeTab === "all"
-      ? founders
-      : founders.filter((member) => member.category === activeTab);
+    activeTab === "all" ? founders : founders.filter((member) => member.category === activeTab);
 
   return (
-    <div className="min-h-screen bg-sky-950 text-slate-100 font-['Poppins',sans-serif] selection:bg-cyan-500 selection:text-sky-950 overflow-x-hidden">
-      
+    <div className="min-h-screen bg-sky-950 text-slate-100 font-sans selection:bg-cyan-500 selection:text-sky-950 overflow-x-hidden">
       {/* Dynamic Cursor Gradient Effect */}
       <div
         className="pointer-events-none fixed inset-0 z-30 transition-opacity duration-300 opacity-30"
@@ -171,11 +120,7 @@ export default function AboutPage() {
         }}
       />
 
-      {/* Ambient background glow */}
-      <div className="absolute top-20 left-4 sm:left-10 w-48 sm:w-72 h-48 sm:h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse pointer-events-none" />
-      <div className="absolute top-96 right-4 sm:right-10 w-64 sm:w-96 h-64 sm:h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-1000 pointer-events-none" />
-
-      {/* HERO SECTION */}
+      {/* Hero Section */}
       <section className="relative pt-24 pb-16 sm:pt-32 sm:pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
         <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full mb-6">
           <Sparkles className="w-4 h-4 text-blue-400" />
@@ -187,10 +132,13 @@ export default function AboutPage() {
           </span>
         </div>
 
+        <h1 className="text-3xl sm:text-5xl font-extrabold mb-6 leading-tight text-white">
+          Empowering Quantum Leadership in Africa
+        </h1>
 
         <p className="text-base sm:text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
-          qubitAfrica is a premier community-led initiative empowering the next generation of 
-          scientists, engineers, and quantum thinkers through hands-on peer programming, 
+          qubitAfrica is a premier community-led initiative empowering the next generation of
+          scientists, engineers, and quantum thinkers through hands-on peer programming,
           accessible research tools, and pan-African academic collaboration.
         </p>
 
@@ -212,8 +160,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-
-      {/* TEAM SECTION */}
+      {/* Team Section */}
       <section id="team" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-white/10">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl sm:text-4xl font-semibold text-slate-100 mb-4">
@@ -224,36 +171,19 @@ export default function AboutPage() {
           </p>
 
           <div className="flex items-center justify-center space-x-2 mt-8">
-            <button
-              onClick={() => setActiveTab("all")}
-              className={`px-4 py-2 text-xs sm:text-sm rounded-lg border transition-all ${
-                activeTab === "all"
-                  ? "bg-blue-500/30 text-white border-blue-400/40 shadow-lg shadow-blue-500/10"
-                  : "bg-white/5 text-gray-400 border-white/10 hover:bg-white/10"
-              }`}
-            >
-              All Team
-            </button>
-            <button
-              onClick={() => setActiveTab("founders")}
-              className={`px-4 py-2 text-xs sm:text-sm rounded-lg border transition-all ${
-                activeTab === "founders"
-                  ? "bg-blue-500/30 text-white border-blue-400/40 shadow-lg shadow-blue-500/10"
-                  : "bg-white/5 text-gray-400 border-white/10 hover:bg-white/10"
-              }`}
-            >
-              Founders
-            </button>
-            <button
-              onClick={() => setActiveTab("leads")}
-              className={`px-4 py-2 text-xs sm:text-sm rounded-lg border transition-all ${
-                activeTab === "leads"
-                  ? "bg-blue-500/30 text-white border-blue-400/40 shadow-lg shadow-blue-500/10"
-                  : "bg-white/5 text-gray-400 border-white/10 hover:bg-white/10"
-              }`}
-            >
-              Leads & Directors
-            </button>
+            {["all", "founders", "leads"].map((tab) => (
+              <button
+                key={tab}
+                onClick={() => setActiveTab(tab)}
+                className={`px-4 py-2 text-xs sm:text-sm capitalize rounded-lg border transition-all ${
+                  activeTab === tab
+                    ? "bg-blue-500/30 text-white border-blue-400/40 shadow-lg shadow-blue-500/10"
+                    : "bg-white/5 text-gray-400 border-white/10 hover:bg-white/10"
+                }`}
+              >
+                {tab === "all" ? "All Team" : tab === "founders" ? "Founders" : "Leads & Directors"}
+              </button>
+            ))}
           </div>
         </div>
 
@@ -280,16 +210,11 @@ export default function AboutPage() {
                   <h3 className="text-xl font-bold text-slate-100 group-hover:text-cyan-300 transition-colors">
                     {member.name}
                   </h3>
-                  <p className="text-xs text-cyan-400 font-medium mb-3 mt-1">
-                    {member.role}
-                  </p>
-                  <p className="text-xs text-gray-400 leading-relaxed mb-6">
-                    {member.bio}
-                  </p>
+                  <p className="text-xs text-cyan-400 font-medium mb-3 mt-1">{member.role}</p>
+                  <p className="text-xs text-gray-400 leading-relaxed mb-6">{member.bio}</p>
                 </div>
               </div>
 
-              {/* Social links using custom inline SVGs */}
               <div className="px-6 pb-6 pt-0 border-t border-white/5 flex items-center space-x-3">
                 <a
                   href={member.socials.linkedin}
@@ -324,10 +249,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-       <Courses navigateFn={(path) => navigate(path)} />
-            {/* IMPORTANT: pass navigateFn */}
-
-      {/* STATS SECTION */}
+      {/* Stats Section */}
       <section className="relative w-full border-y border-white/10 bg-slate-900/40 backdrop-blur-md py-12">
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
@@ -349,38 +271,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* COMMUNITY PHOTO BANNER */}
-      <section className="relative w-full my-12 overflow-hidden border-y border-white/10">
-        <div className="relative h-[65vh] w-full">
-          <img
-            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1600"
-            alt="Global Quantum Community"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-sky-950/70 backdrop-blur-[2px]" />
-          <div className="absolute inset-0 bg-gradient-to-t from-sky-950 via-transparent to-sky-950/80" />
-
-          <div className="absolute inset-0 flex items-center justify-center px-4">
-            <div className="max-w-3xl bg-sky-900/40 backdrop-blur-xl p-8 sm:p-10 rounded-2xl border border-white/20 text-center shadow-2xl">
-              <span className="text-xs uppercase tracking-widest text-cyan-300 font-semibold mb-2 block">
-                Pan-African Network
-              </span>
-              <h3 className="text-2xl sm:text-4xl font-semibold text-white mb-4">
-                A Shared Passion for Quantum Tech
-              </h3>
-              <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
-                Our vibrant ecosystem connects passionate students, quantum researchers, and developers collaborating on open algorithms and real hardware runs.
-              </p>
-              <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-lg font-semibold text-sky-950 text-sm hover:scale-105 transition-all shadow-lg inline-flex items-center space-x-2">
-                <span>Join The Community</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SPONSORS SECTION */}
+      {/* Sponsors Section */}
       <section id="sponsors" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl sm:text-4xl font-semibold text-slate-100 mb-4">
@@ -400,29 +291,11 @@ export default function AboutPage() {
               <div className="text-lg font-bold text-slate-200 group-hover:text-cyan-300 transition-colors">
                 {sponsor.logo}
               </div>
-              <p className="text-[10px] text-gray-400 mt-2 font-medium">
-                {sponsor.category}
-              </p>
+              <p className="text-[10px] text-gray-400 mt-2 font-medium">{sponsor.category}</p>
             </div>
           ))}
         </div>
-
-        <div className="mt-12 bg-gradient-to-r from-blue-900/30 via-cyan-900/20 to-blue-900/30 rounded-2xl p-6 sm:p-8 border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="text-center sm:text-left">
-            <h4 className="text-lg font-semibold text-white">
-              Interested in sponsoring quantum education in Africa?
-            </h4>
-            <p className="text-sm text-gray-400 mt-1">
-              Help us fund compute credits, student hackathons, and research fellowships.
-            </p>
-          </div>
-          <button className="px-5 py-2.5 bg-white/10 hover:bg-white/20 border border-white/15 rounded-lg text-sm font-medium text-cyan-300 transition-colors whitespace-nowrap flex items-center space-x-2">
-            <span>Partner With Us</span>
-            <ExternalLink className="w-4 h-4" />
-          </button>
-        </div>
       </section>
-
     </div>
   );
 }
