@@ -35,10 +35,10 @@ export default function Courses({ navigateFn }) {
     <div className="w-full min-h-screen bg-sky-950 pt-28 pb-16 px-6 font-light flex flex-col items-center">
       <div className="text-center mb-12 max-w-2xl">
         <h1 className="text-3xl sm:text-4xl font-normal text-white mb-3 tracking-wide">
-          Explore Our Courses
+           Our Courses
         </h1>
         <p className="text-gray-300 text-sm sm:text-base font-light leading-relaxed">
-          Select a course below to dive into tutorials, interactive notebooks, and quantum hardware concepts.
+          Select a course below to dive into tutorials, interactive notebooks, and quantum concepts.
         </p>
       </div>
 
